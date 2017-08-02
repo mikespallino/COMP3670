@@ -1,7 +1,8 @@
 img.fbb-title {
-    width: 150px;
-    height: 80px;
+    width: 200px;
+    height: 100px;
     padding: 10px;
+    margin-left: 5px;
 }
 
 /* This is to make the nav social vertically align with the copyright*/
@@ -24,7 +25,7 @@ nav#social {
 div#anchor {
     line-height: 100px;
     z-index: 10;
-    background: #002171;
+    background: #002F6C;
     color: #FFFFFF;
 }
 
@@ -186,9 +187,9 @@ tr.striped-table {
 }
 
 tr.table-header {
-    background-color: #5472d3;
+    background-color: #4F83CC;
     color: #FFFFFF;
-    text-align: center;
+    text-align: center !important;
 }
 
 table#events-table {
@@ -198,7 +199,7 @@ table#events-table {
   margin-right: 5%;
   margin-bottom: 5%;
   margin-top: 5%;
-  border: 1px solid #5472d3;
+  border: 1px solid #4F83CC;
 }
 
 div#padding-bottomtable {
@@ -207,7 +208,11 @@ div#padding-bottomtable {
 
 h1.page-title{
   padding: 15px;
-  background-color: #0d47a1;
+  background-color: #01579B;
   color: #FFFFFF;
 }
 
+
+@link-color {
+  color: #FFFFFF;
+}
