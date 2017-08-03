@@ -180,7 +180,9 @@ p.inline-right {
 }
 
 div.bio {
-    padding: 10px;
+    width: 96%;
+    padding-left: 4%;
+    padding-bottom: 10px;
 }
 
 tr.striped-table {
