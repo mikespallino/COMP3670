@@ -1,11 +1,11 @@
 <h1>Music</h1>
 
-<script type="text/javascript" src="http://w.soundcloud.com/player/api.js"></script>
+<script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
 <!-- buttons for each song-->
 <script type="text/javascript">
 $(document).ready(function(){
     
-    $("#button_smileback").click(function(){
+    $("#td_smileback").click(function(){
         var widget_smileback = SC.Widget("song_smileback");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -21,7 +21,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     
-    $("#button_pcp").click(function(){
+    $("#td_pcp").click(function(){
         var widget_pcp = SC.Widget("song_pcp");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -37,7 +37,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     
-    $("#button_lady").click(function(){
+    $("#td_lady").click(function(){
         var widget_lady = SC.Widget("song_lady");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -53,7 +53,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     
-    $("#button_feelgood").click(function(){
+    $("#td_feelgood").click(function(){
         var widget_feelgood = SC.Widget("song_feelgood");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -69,7 +69,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     
-    $("#button_vmed").click(function(){
+    $("#td_vmed").click(function(){
         var widget_vmed = SC.Widget("song_vmed");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -85,7 +85,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
 
-    $("#button_wind").click(function(){
+    $("#td_wind").click(function(){
         var widget_wind = SC.Widget("song_wind");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -101,7 +101,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     
-    $("#button_breathe").click(function(){
+    $("#td_breathe").click(function(){
         var widget_breathe = SC.Widget("song_breathe");
         $(".songlink").hide();
         $("#cover").css({ "display": 'none'});
@@ -121,44 +121,44 @@ $(document).ready(function(){
         <div class="small-box">
             <table class="table table-hover" style="clear:none;">
                 <tr>
-                    <td>
-                        <I id="button_smileback" class="fa fa-play-circle-o" aria-hidden="true"></I>
-                        Smile Back <p class="inline-right">4:20<p>
+                    <td id="td_smileback">
+                        <I id="button_smileback" class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I>
+                         Smile Back <p class="inline-right">4:20<p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <I id="button_pcp" class="fa fa-play-circle-o" aria-hidden="true"></I>
-                        Police Car Panic <p class="inline-right">2:14</p>
+                    <td id="td_pcp">
+                        <I id="button_pcp" class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I>
+                         Police Car Panic <p class="inline-right">2:14</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <I id="button_lady" class="fa fa-play-circle-o" aria-hidden="true"></I>
-                        Be My Lady <p class="inline-right">4:28</p>
+                    <td id="td_lady">
+                        <I id="button_lady" class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I>
+                         Be My Lady <p class="inline-right">4:28</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <I id="button_feelgood" class="fa fa-play-circle-o" aria-hidden="true"></I> 
-                        Feel Good Inc. <p class="inline-right">2:00</p>
+                    <td id="td_feelgood">
+                        <I id="button_feelgood" class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I> 
+                         Feel Good Inc. <p class="inline-right">2:00</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <I id="button_wind" class="fa fa-play-circle-o" aria-hidden="true"></I>
-                        Wind <p class="inline-right">3:07</p>
+                    <td id="td_wind">
+                        <I id="button_wind" class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I>
+                         Wind <p class="inline-right">3:07</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <I id="button_vmed" class="fa fa-play-circle-o" aria-hidden="true"></I>
-                        Very Mediocre <p class="inline-right">2:02</p>
+                    <td id="td_vmed">
+                        <I id="button_vmed" class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I>
+                         Very Mediocre <p class="inline-right">2:02</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <I id="button_breathe"class="fa fa-play-circle-o" aria-hidden="true"></I>
+                    <td id="td_breathe">
+                        <I id="button_breathe"class="fa fa-play-circle-o fa-lg" aria-hidden="true"></I>
                         Breathe <p class="inline-right">3:24</p>
                     </td>
                 </tr>
