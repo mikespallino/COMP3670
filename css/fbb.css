@@ -1,6 +1,8 @@
 img.fbb-title {
-    width: 100px;
+    width: 200px;
     height: 100px;
+    padding: 10px;
+    margin-left: 5px;
 }
 
 /* This is to make the nav social vertically align with the copyright*/
@@ -23,6 +25,8 @@ nav#social {
 div#anchor {
     line-height: 100px;
     z-index: 10;
+    background: #002F6C;
+    color: #FFFFFF;
 }
 
 nav#left-nav {
@@ -157,7 +161,7 @@ p.inline-right {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #008CBA;
+  background-color: #5472d3;
 }
 
 .MTBcontainer:hover .MTBoverlay {
@@ -176,4 +180,39 @@ p.inline-right {
 
 div.bio {
     padding: 10px;
+}
+
+tr.striped-table {
+    background-color: #FFFFFF;
+}
+
+tr.table-header {
+    background-color: #4F83CC;
+    color: #FFFFFF;
+    text-align: center !important;
+}
+
+table#events-table {
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  border: 1px solid #4F83CC;
+}
+
+div#padding-bottomtable {
+  height: 1px;
+}
+
+h1.page-title{
+  padding: 15px;
+  background-color: #01579B;
+  color: #FFFFFF;
+}
+
+
+@link-color {
+  color: #FFFFFF;
 }

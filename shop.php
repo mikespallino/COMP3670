@@ -1,4 +1,4 @@
-<h1>Shop</h1>
+<h1 class="page-title">Shop</h1>
 
 <?php
     require_once('config.php');
