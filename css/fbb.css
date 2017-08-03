@@ -65,13 +65,14 @@ div.img-inline {
 }
 
 div#homepage-overlay {
+    position: absolute;
+    top: 50px;
+    left: 25%;
     text-align: center;
-    position: relative;
-    bottom: 900px;
 }
 
 div#meettheboys {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 5px;
 }
 
