@@ -216,3 +216,15 @@ h1.page-title{
 @link-color {
   color: #FFFFFF;
 }
+
+a#news-link {
+	color: #FFFFFF;
+}
+
+a#news-link:hover {
+	color: #000000;
+}
+
+a#news-link:focus {
+	color: #000000;
+}
