@@ -162,7 +162,7 @@ p.inline-right {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #5472d3;
+  background-color: #4F83CC;
 }
 
 .MTBcontainer:hover .MTBoverlay {
@@ -218,14 +218,18 @@ h1.page-title{
   color: #FFFFFF;
 }
 
-a#news-link {
+a.headerLink {
 	color: #FFFFFF;
 }
 
-a#news-link:hover {
-	color: #000000;
+a.headerLink:hover {
+	color: #4F83CC;
 }
 
-a#news-link:focus {
-	color: #000000;
+a.headerLink:focus {
+	color: #4F83CC;
 }
+
+a.headerLink:active {
+  color: #4F83CC;
+
