@@ -10,14 +10,26 @@
     	$output = "<p>Unable to connect to database</p>".$error;
     	exit($output);
     } else {
-    	$sql = "SELECT item_name, item_img_path, price FROM fbb.store_items WHERE quantity > 0";
+    	$sql = "SELECT * FROM fbb.store_items WHERE display_item = true";
 	$result = mysqli_query($conn, $sql);
 	if($result-> num_rows > 0) {
-	    echo "<table border='1px' class='table table-bordered'><tr><th colspan='2'>Item</th><th>Price</th></tr>";
+	    echo "<div class=\"shop-page\">";
 	    while($row = $result-> fetch_assoc()) {
-		    echo "<tr><td><img src='".$row['item_img_path']."'/></td><td>".$row['item_name']."</td><td>".$row['price']."</td></tr>";
-	    }
-	    echo "</table>";
+		   echo "<div class=\"shop-block\"> <div class=\"shop-top\"><span class=\"shop-item\">".$row["item_type"]."</span></div><div class=\"shop-middle\"><img src=\"".$row['item_img_path']."\" alt=\"item\" /></div><div class=\"shop-bottom\"><div class=\"shop-heading\">".$row['item_name']."</div>";
+	       if($row['item_info'] != '') {
+            echo "<div class=\"shop-info\">".$row['item_info']."</div>";
+           }
+           if($row['item_style'] != '') {
+            echo "<div class=\"shop-style\">".$row['item_style']."</div>";
+           }
+           if($row['quantity'] > 0) {
+             echo "<div class=\"shop-price\">$".$row['price']."</div>";
+           } else {
+            echo "<div class=\"shop-price\">$".$row['price']." <span class=\"shop-out-of-stock\">Out of stock!</span></div>";
+           }
+           echo "</div></div>";
+        }
+	    echo "</div>";
         }
     }
 ?>

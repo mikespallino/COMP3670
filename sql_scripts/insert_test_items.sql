@@ -1,5 +1,3 @@
-INSERT INTO fbb.store_items (item_id, item_name, item_img_path, quantity, price) VALUES ("1", "big sticker", "/images/", "99", "2.00");
-INSERT INTO fbb.store_items (item_id, item_name, item_img_path, quantity, price) VALUES ("2", "small sticker", "/images/", "99", "1.00");
-INSERT INTO fbb.store_items (item_id, item_name, item_img_path, quantity, price) VALUES ("3", "blueberry shirt", "/images/", "10", "15.00");
-INSERT INTO fbb.store_items (item_id, item_name, item_img_path, quantity, price) VALUES ("4", "be my lady shirt", "/images/", "5", "20.00");
-INSERT INTO fbb.store_items (item_id, item_name, item_img_path, quantity, price) VALUES ("5", "FatherBlue Berries EP", "/images/", "99", "10.00");
+INSERT INTO fbb.store_items (item_id, item_name, item_type, item_style, item_info, item_img_path, quantity, price, display_item) VALUES ("1", "Father BlueBerries Lighter", "Lighter", "Color: Per Request", "", "images/FBBlighter.PNG", "0", "5.00", true);
+INSERT INTO fbb.store_items (item_id, item_name, item_type, item_style, item_info, item_img_path, quantity, price, display_item) VALUES ("2", "Father BlueBerries Sticker", "Sticker", "", "", "images/FBBsticker.PNG", "0", "5.00", true);
+INSERT INTO fbb.store_items (item_id, item_name, item_type, item_style, item_info, item_img_path, quantity, price, display_item) VALUES ("3", "blueberry shirt", "T-Shirt", "Color: White", "Spray paint edition", "images/FBBtee.PNG", "0", "20.00", true);
