@@ -40,6 +40,8 @@ $(document).ready(function () {
         shop_load();
     }
 
+   
+
 });
 
 function index_load() {
