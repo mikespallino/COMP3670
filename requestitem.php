@@ -25,7 +25,7 @@ require_once('config.php');
         header("HTTP/1.1 500 Internal Server Error");
     } else {
         $sql = "UPDATE fbb.store_requests ".
-        "SET num_of_request = (num_of_request + 1) ".
+        "SET num_of_requests = (num_of_requests + 1) ".
         "WHERE item_id = ".$_POST["requestedItemId"];
         $result = mysqli_query($conn, $sql);
         if (!mysqli_commit($conn)) {

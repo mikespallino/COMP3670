@@ -107,8 +107,8 @@ function shop_load() {
     center.load("shop.php", function() {
         var shopItems = document.getElementsByClassName('request-button');
         for(var i = 0; i < shopItems.length; i++) {
-            var elementId = shopItems[i].getAttribute("id");
             shopItems[i].addEventListener('click', function(e) {
+                var elementId = e.target.getAttribute("id");
                 $('#requestItemModal').modal('show');
                 $('#requestItemModal').on('submit', function(e) {
                     e.preventDefault();
