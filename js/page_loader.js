@@ -41,6 +41,7 @@ $(document).ready(function () {
     }
 
     $('#sendContact').on('click', function(e) {
+        $('#sendContact').validate();
         e.preventDefault();
         $.ajax({
             url: 'contactus.php',
@@ -110,6 +111,7 @@ function shop_load() {
             var elementId = shopItems[i].getAttribute("id");
             shopItems[i].addEventListener('click', function(e) {
                 $('#requestItemModal').modal('show');
+                $('#requestItemModal').validate();
                 $('#sendItemRequest').on('click', function(e) {
                     var requestedItem = $('#requestForm').serialize();
                     var itemName = document.getElementById(elementId).getAttribute('id').split('-');

@@ -11,7 +11,9 @@ $headers = "MIME-Version: 1.0\r\n".
            "Content-type: text/html; charset=iso-8859-1\r\n".
            "From: " . $email."\r\n";
 
-mail($to,$subject,$txt,$headers);
+if (!mail($to,$subject,$txt,$headers)) {
+    header("HTTP/1.1 500 Internal Server Error");
+}
 
 require_once('config.php');
 
