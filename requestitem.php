@@ -2,7 +2,7 @@
 $fName = $_POST["firstName"];
 $lName = $_POST["lastName"];
 $email = $_POST["email"];
-$msg = "This item has been requested: ".$_POST["requestedItem"];
+$msg = "This item: "..$_POST["requestedItem"] "\r\n"."has been requested by: ".$fName." ".$lName." (".$email").\r\n";
 
 $to = "fatherblueberries@gmail.com";
 $subject = "Item Request";

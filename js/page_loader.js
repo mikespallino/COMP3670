@@ -115,8 +115,8 @@ function shop_load() {
                 $('#sendItemRequest').on('click', function(e) {
                     var requestedItem = $('#requestForm').serialize();
                     var itemName = document.getElementById(elementId).getAttribute('id').split('-');
-                    requestedItem['requestedItem'] = itemName[0];
-                    requestedItem['requestedItemId'] = itemName[1];
+                    requestedItem.requestedItem = itemName[0];
+                    requestedItem.requestedItemId = itemName[1];
                     e.preventDefault();
                     $.ajax({
                         url: 'requestitem.php',
@@ -124,7 +124,6 @@ function shop_load() {
                         type: 'POST',
                         success: function(result) {
                             $('#requestItemModal').modal('hide');
-                            alert("woo?");
                         },
                         error: function(XMLHttpRequest, textStatus, errorThrown) {
                             $('#requestItemModal').modal('hide');
