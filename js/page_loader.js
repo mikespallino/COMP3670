@@ -40,8 +40,7 @@ $(document).ready(function () {
         shop_load();
     }
 
-    $('#sendContact').on('click', function(e) {
-        $('#sendContact').validate();
+    $('#contactForm').on('submit', function(e) {
         e.preventDefault();
         $.ajax({
             url: 'contactus.php',
@@ -111,13 +110,12 @@ function shop_load() {
             var elementId = shopItems[i].getAttribute("id");
             shopItems[i].addEventListener('click', function(e) {
                 $('#requestItemModal').modal('show');
-                $('#requestItemModal').validate();
-                $('#sendItemRequest').on('click', function(e) {
+                $('#requestItemModal').on('submit', function(e) {
+                    e.preventDefault();
                     var requestedItem = $('#requestForm').serialize();
                     var itemName = document.getElementById(elementId).getAttribute('id').split('-');
                     requestedItem.requestedItem = itemName[0];
                     requestedItem.requestedItemId = itemName[1];
-                    e.preventDefault();
                     $.ajax({
                         url: 'requestitem.php',
                         data: requestedItem,

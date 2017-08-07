@@ -30,11 +30,11 @@ require_once('config.php');
         "SET num_of_request = num_of_request+1".
         "WHERE item_id = ".$_POST["requestedItemId"];
         $result = mysqli_query($conn, $sql);
-        if (!$mysqli->commit()) {
+        if (!mysqli_commit($conn)) {
             echo "<p>Transaction commit failed</p>";
             header("HTTP/1.1 500 Internal Server Error");
             exit();
         }
-        $mysqli->close();
+        mysqli_close($conn);
     }
 ?>
