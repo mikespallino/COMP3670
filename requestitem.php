@@ -9,7 +9,7 @@ $subject = "Item Request";
 $headers = "MIME-Version: 1.0\r\n".
            "Content-type: text/html; charset=iso-8859-1\r\n";
 
-if (!mail($to,$subject,$txt,$headers)) {
+if (!mail($to,$subject,$msg,$headers)) {
     header("HTTP/1.1 500 Internal Server Error");
 }
 
