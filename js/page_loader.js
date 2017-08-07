@@ -40,7 +40,22 @@ $(document).ready(function () {
         shop_load();
     }
 
-   
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: 'contactus.php',
+            data: $('#contactForm').serialize(),
+            type: 'POST',
+            success: function(result) {
+                $('#contactUsModal').modal('hide');
+                $('#thanksModal').modal('show');
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                $('#contactUsModal').modal('hide');
+                $('#errorModal').modal('show');
+            }
+        });
+    });
 
 });
 
@@ -89,7 +104,34 @@ function shop_load() {
     set_cookie("curpage", "shop");
     var center = $("#center");
     center.innerHTML = "";
-    center.load("shop.php");
+    center.load("shop.php", function() {
+        var shopItems = document.getElementsByClassName('request-button');
+        for(var i = 0; i < shopItems.length; i++) {
+            shopItems[i].addEventListener('click', function(e) {
+                var elementId = e.target.getAttribute("id");
+                $('#requestItemModal').modal('show');
+                $('#requestItemModal').on('submit', function(e) {
+                    e.preventDefault();
+                    var requestedItem = $('#requestForm').serialize();
+                    var itemName = document.getElementById(elementId).getAttribute('id').split('-');
+                    requestedItem = requestedItem + "&requestedItem=" + itemName[0];
+                    requestedItem = requestedItem + "&requestedItemId=" + itemName[1];
+                    $.ajax({
+                        url: 'requestitem.php',
+                        data: requestedItem,
+                        type: 'POST',
+                        success: function(result) {
+                            $('#requestItemModal').modal('hide');
+                        },
+                        error: function(XMLHttpRequest, textStatus, errorThrown) {
+                            $('#requestItemModal').modal('hide');
+                            $('#errorModal').modal('show');
+                        }
+                    });
+                });
+            });
+        }
+    });
 }
 
 function set_cookie(name, value) {
