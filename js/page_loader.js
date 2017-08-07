@@ -114,8 +114,8 @@ function shop_load() {
                     e.preventDefault();
                     var requestedItem = $('#requestForm').serialize();
                     var itemName = document.getElementById(elementId).getAttribute('id').split('-');
-                    requestedItem.requestedItem = itemName[0];
-                    requestedItem.requestedItemId = itemName[1];
+                    requestedItem = requestedItem + "&requestedItem=" + itemName[0];
+                    requestedItem = requestedItem + "&requestedItemId=" + itemName[1];
                     $.ajax({
                         url: 'requestitem.php',
                         data: requestedItem,
