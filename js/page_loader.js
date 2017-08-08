@@ -44,13 +44,11 @@ $(document).ready(function () {
             data: $('#contactForm').serialize(),
             type: 'POST',
             success: function(result) {
-                $('#contactUsModal').modal('toggle');
-                $('#thanksModal').modal('toggle');
+                switchModals('#contactUsModal', '#thanksModal');
                 document.getElementById('contactForm').reset();
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $('#contactUsModal').modal('toggle');
-                $('#errorModal').modal('show');
+                switchModals('#contactUsModal', '#thanksModal');
                 document.getElementById('contactForm').reset();
             }
         });
@@ -124,8 +122,7 @@ function shop_load() {
                             document.getElementById('requestForm').reset();
                         },
                         error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            $('#requestItemModal').modal('toggle');
-                            $('#errorModal').modal('toggle');
+                            switchModals('#requestItemModal', '#errorModal');
                             document.getElementById('requestForm').reset();
                         }
                     });
@@ -140,4 +137,13 @@ function set_cookie(name, value) {
     // 12 hours in the future
     exprDate.setTime(exprDate.getTime() + (12*60*60*1000));
     document.cookie = name + "=" + value  + ";expires=" + exprDate.toUTCString() + ";path=/";
+}
+
+function switchModals(fromModal, toModal) {
+    $(fromModal).on('hidden.bs.modal', function (e) {
+        $(toModal).modal('show');
+        //clear this function so it doesn't show up if they exit the window again
+        $(fromModal).off();
+    });
+    $(fromModal).modal('hide');
 }
