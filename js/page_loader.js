@@ -3,12 +3,9 @@ $(document).ready(function () {
     var cookieVars = decodedCookie.split("; ");
     var currentPage = "index";
 
-    console.log(document.cookie);
-
     for(var i = 0; i < cookieVars.length; i++) {
         if(cookieVars[i].indexOf("curpage=") == 0) {
             currentPage = cookieVars[i].substring(8, cookieVars[i].length);
-            console.log(currentPage);
         }
     }
 
@@ -40,19 +37,21 @@ $(document).ready(function () {
         shop_load();
     }
 
-    $('#contactForm').on('submit', function(e) {
+    $('#contactForm').off('submit').on('submit', function(e) {
         e.preventDefault();
         $.ajax({
-            url: 'contactus.php',
+            url: 'index.html',
             data: $('#contactForm').serialize(),
             type: 'POST',
             success: function(result) {
-                $('#contactUsModal').modal('hide');
-                $('#thanksModal').modal('show');
+                $('#contactUsModal').modal('toggle');
+                $('#thanksModal').modal('toggle');
+                document.getElementById('contactForm').reset();
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $('#contactUsModal').modal('hide');
+                $('#contactUsModal').modal('toggle');
                 $('#errorModal').modal('show');
+                document.getElementById('contactForm').reset();
             }
         });
     });
@@ -110,7 +109,7 @@ function shop_load() {
             shopItems[i].addEventListener('click', function(e) {
                 var elementId = e.target.getAttribute("id");
                 $('#requestItemModal').modal('show');
-                $('#requestItemModal').on('submit', function(e) {
+                $('#requestItemModal').off('submit').on('submit', function(e) {
                     e.preventDefault();
                     var requestedItem = $('#requestForm').serialize();
                     var itemName = document.getElementById(elementId).getAttribute('id').split('-');
@@ -121,11 +120,13 @@ function shop_load() {
                         data: requestedItem,
                         type: 'POST',
                         success: function(result) {
-                            $('#requestItemModal').modal('hide');
+                            $('#requestItemModal').modal('toggle');
+                            document.getElementById('requestForm').reset();
                         },
                         error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            $('#requestItemModal').modal('hide');
-                            $('#errorModal').modal('show');
+                            $('#requestItemModal').modal('toggle');
+                            $('#errorModal').modal('toggle');
+                            document.getElementById('requestForm').reset();
                         }
                     });
                 });
